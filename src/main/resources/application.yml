@@ -1,0 +1,20 @@
+spring:
+  kafka:
+    bootstrap-servers: 192.168.130.21:9092
+
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonSerializer
+      auto-offset-reset: latest
+      group-id: testGroup
+      max-poll-records: 10
+      enable-auto-commit: false
+
+
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      #org.springframework.kafka.support.serializer.JsonSerializer
+      org.springframework.kafka.support.serializer.JsonDeserializer
+
+
